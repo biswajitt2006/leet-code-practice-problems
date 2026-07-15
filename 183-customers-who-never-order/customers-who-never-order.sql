@@ -3,7 +3,7 @@ SELECT c.name AS Customers
 FROM Customers C 
 LEFT JOIN Orders o 
 ON c.id=o.customerId
-WHERE o.customerId IS NULL
+WHERE o.id IS NULL
 
 -- Synced seamlessly with LeetHub Pro
 -- Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
