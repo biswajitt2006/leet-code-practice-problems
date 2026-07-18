@@ -1,17 +1,19 @@
 class Solution:
     def fib(self, n: int) -> int:
-        dp = [-1] * (n + 1)
+        if n <= 1:
+            return n
 
-        def solve(n):
-            if n <= 1:
-                return n
-            if dp[n] != -1 :
-                return dp[n]
-            
-            dp[n] = solve(n-1) + solve(n-2)
-            return dp[n]
-        
-        return solve(n)
+        if n == 2:
+            return 1
+
+        dp = [0, 1, 1]
+
+        for i in range(3, n + 1):
+            dp[0] = dp[1]
+            dp[1] = dp[2]
+            dp[2] = dp[0] + dp[1]
+
+        return dp[2]
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
